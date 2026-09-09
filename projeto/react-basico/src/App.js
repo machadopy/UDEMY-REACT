@@ -5,9 +5,17 @@ function App() {
   return (
     <div className="App">
       <h1>Meu Projecto</h1>
-      <h2><Comentario/></h2>
-      <h2><Comentario/></h2>
-      <h2><Comentario/></h2>
+          <Comentario nome="joao" email="joao@emial.com" data={new Date(2026,9,9)}>
+            comentario = "Um comentario"
+          </Comentario>
+
+          <Comentario nome="joao" email="joao@emial.com" data={new Date(2026,9,9)}>
+            comentario = "Um comentario"
+          </Comentario>
+
+          <Comentario nome="joao" email="joao@emial.com" data={new Date(2026,9,9)}>
+            comentario = "Um comentario"
+          </Comentario>
     </div>
   );
 }
