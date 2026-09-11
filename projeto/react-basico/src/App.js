@@ -11,13 +11,14 @@ class App extends Component {
         nome: 'Joao',
         email:'joao@email.com',
         data: new Date(2026,9,9),
-        mensagem: 'Um comentario',
+        mensagem: 'mensagem 1',
+
       },
       {
         nome: 'juca',
         email:'juca@email.com',
         data: new Date(2026,9,9),
-        mensagem: '2 comentario',
+        mensagem: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veniam alias excepturi ratione ex illum quibusdam facilis sapiente quam autem nisi nam, placeat eos odio dicta. Cupiditate illo temporibus dicta.',
       }
     ],
     novoComentario:{
@@ -58,7 +59,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <h1>Meu Projecto</h1>
+        <h1>Comentarios</h1>
 
         {this.state.comentarios.map((comentario, indice) =>{
           return(
@@ -73,19 +74,19 @@ class App extends Component {
             </Comentario>
 
           )})}
-        <form method="post" onSubmit={this.adicionarComentario}>
+        <form className='Novo-Comentario' method="post" onSubmit={this.adicionarComentario}>
           <h2>Enviar Comentario</h2>
 
           <div>
-            <input type="text" name="nome" value={this.state.novoComentario.nome} onChange={this.typeValue} placeholder='Seu nome:' />
+            <input required type="text" name="nome" value={this.state.novoComentario.nome} onChange={this.typeValue} placeholder='Seu nome:' />
           </div>
 
           <div>
-            <input type="email" name="email" value={this.state.novoComentario.email}onChange={this.typeValue} placeholder='Seu email:' />
+            <input required type="email" name="email" value={this.state.novoComentario.email}onChange={this.typeValue} placeholder='Seu email:' />
           </div>
 
           <div>
-            <textarea name="mensagem" value={this.state.novoComentario.mensagem} onChange={this.typeValue}rows="4"></textarea>
+            <textarea required name="mensagem" value={this.state.novoComentario.mensagem} onChange={this.typeValue}rows="4"></textarea>
           </div>
           <button type="submit">Enviar</button>
 
